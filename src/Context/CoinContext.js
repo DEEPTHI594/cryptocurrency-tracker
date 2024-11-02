@@ -14,7 +14,7 @@ const CoinContextProvider = (props) =>{
             headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-8F52wcpfZPT8UjUzAN8x5263'}
           };
           
-          fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}', options)
+          fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency.name}`, options)
             .then(res => res.json())
             .then(res => setAllCoin(res))
             .catch(err => console.error(err));

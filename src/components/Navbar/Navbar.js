@@ -3,11 +3,12 @@ import logo from '../../assests/suj 2.0.png';
 import { FaArrowRightToBracket } from "react-icons/fa6";
 import { useContext } from 'react';
 import { CoinContext } from '../../Context/CoinContext';
+import { Link } from 'react-router-dom';
 function Navbar() {
   const {setCurrency} = useContext(CoinContext)
 
   const currencyHandler = (event)=>{
-   switch(event.targe.value){
+   switch(event.target.value){
     case "usd": {
       setCurrency({name: "usd", symbol: "$"});
       break;
@@ -29,9 +30,13 @@ function Navbar() {
   }
     return (
       <div className='navbar'>
+        <Link to={'/'}>
         <img src={logo} alt="" className='logo' />
+        </Link>
+        
         <ul>
-            <li>Home</li>
+          <Link to={'/'}>
+            <li>Home</li></Link>
             <li>Features</li>
             <li>Pricing</li>
             <li>Blog</li>
